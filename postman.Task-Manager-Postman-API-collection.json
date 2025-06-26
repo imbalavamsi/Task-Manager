@@ -1,0 +1,201 @@
+{
+  "info": {
+    "name": "FAANG Task Manager - Full API",
+    "description": "Postman collection covering all CRUD operations for FAANG onboarding tasks.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Single Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Set Up Email and Calendar\",\n  \"description\": \"Login to your company Gmail and sync your calendar.\",\n  \"completed\": false\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Multiple Tasks",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  {\n    \"title\": \"Set Up Email and Calendar\",\n    \"description\": \"Login to your company Gmail and sync your calendar.\",\n    \"completed\": false\n  },\n  {\n    \"title\": \"Set Up Email and Calendar\",\n    \"description\": \"Login to your company Gmail and sync your calendar.\",\n    \"completed\": false\n  },\n  {\n    \"title\": \"Set Up Email and Calendar\",\n    \"description\": \"Login to your company Gmail and sync your calendar.\",\n    \"completed\": false\n  }\n]"
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "bulk"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Task by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/tasks/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Task by ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"title\": \"Updated Task Title\",\n  \"description\": \"Updated description for the task.\",\n  \"completed\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Multiple Tasks",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  {\n    \"id\": 1,\n    \"title\": \"Task A - Updated\",\n    \"description\": \"Update for task A\",\n    \"completed\": true\n  },\n  {\n    \"id\": 2,\n    \"title\": \"Task B - Updated\",\n    \"description\": \"Update for task B\",\n    \"completed\": false\n  }\n]"
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "bulk"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Task by ID",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/tasks/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Multiple Tasks",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  1,\n  2\n]"
+        },
+        "url": {
+          "raw": "http://localhost:8080/tasks/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tasks",
+            "bulk"
+          ]
+        }
+      }
+    }
+  ]
+}
